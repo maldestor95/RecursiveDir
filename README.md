@@ -19,6 +19,7 @@ recursive.parse(path, function(err,files){
 })
 ```
 
+````
 var rr=require('./index');
 console.log(rr.list);
 var print=function(e,d){
@@ -36,6 +37,7 @@ var listeee=function(){
 };
 
 rr.parse('c:\\temp',listeee);
+```
 
 ## API
 
