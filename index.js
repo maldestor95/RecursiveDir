@@ -53,12 +53,13 @@ var recursive=require('recursive-readdir');
   // private function to perform the filtering
   var searchfunction=function(sf,cb){
     if (RecursiveDir.list!=null){
-      cb (null,
-        _.each(sf,function(data){
+      _.each(sf,function(data){
         // console.log( data);
-        RecursiveDir.filteredList=_.filter(RecursiveDir.filteredList,function(k){return k.match(data)!=null});
-      })
-      );
+        RecursiveDir.filteredList=_.filter(RecursiveDir.filteredList,
+            function(k){return k.match(data)!=null;}
+        );
+      });     
+      cb (null,RecursiveDir.filteredList);
     }   
   };
 

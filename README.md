@@ -9,7 +9,7 @@ or in any subdirectories.
 
 ## Usage
 
-
+### Parse
 ```javascript
 var recursive = require('recursiveDir');
 
@@ -19,25 +19,15 @@ recursive.parse(path, function(err,files){
 })
 ```
 
-````
-var rr=require('./index');
-console.log(rr.list);
-var print=function(e,d){
-  // console.log(e,d);
-  console.log(rr.filteredList);
-};
+The output is accessible through ```recursive.list```
 
-var listeee=function(){
-  rr.filter("2015",print);
-  rr.filter(["2015","S1","data"],print);
-  rr.clearfilter();
-  rr.filter(["2016"],print);
-  rr.clearfilter();
-  rr.filter("09",print);
-};
+### Filtering
+Two parameters possible:
+* A string ```rr.filter("2015",callback)```
+* An array ```rr.filter(["A","B"],callback)```
 
-rr.parse('c:\\temp',listeee);
-```
+The output is accessible through ```recursive.filteredList```
 
-## API
+### Clear filtering
+As the filtering is cumulative, a way to clear it is using ```recursive.clearfilter();```
 
